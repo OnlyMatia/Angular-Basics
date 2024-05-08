@@ -1,6 +1,6 @@
 <h2>1. Kreirati novi Angular projekat na Desktop, ime projekta postaviti kao vaše ImePrezime.</h2>
 
-<p style="color:lightgreen;">ng new ImePrezime</p>
+<font color="lightgreen">ng new ImePrezime</font>
 
 <h2>2. Generisati sljedeće komponente: HomeComponent, NavComponent, ProductComponent i NotFoundComponent</h2>
 
