@@ -14,15 +14,15 @@ Za radece komponente stranice
 <h2>3. NavComponent dodati na AppComponent, kako bi ova komponenta mogla biti stalno vidljiva. Na NavComponent potrebno je dodati navigacijsku traku. Na navigacijskoj traci potrebno da se nalaze sljedeća dva linka: Home i Product. Te nakon kreiranja navigacijske trake potrebno je rutirati dodane stavke na način da se otvaraju HomeComponent ili ProductComponent.</h2>
 
             app.component.html
-
+```html
 <app-nav></app-nav>   <--
 <main class="container">
   <router-outlet></router-outlet>
 </main>
-
+```
 
             nav.component.html
-
+```html
 <nav>
     <ul>
         <li><strong>KCKF</strong></li>
@@ -32,10 +32,10 @@ Za radece komponente stranice
         <li><a [routerLink]="'product'">Product</a></li>
     </ul>
 </nav>
-
+```
 
             app-routing.module.ts
-
+```typescript
 const routes: Routes = [
   {
     path: '',
@@ -55,7 +55,7 @@ const routes: Routes = [
     component: NotFoundComponent
   }
 ];
-
+```
 
 <h2>4. Kreirati interface klasu za listu proizvoda koju ćemo koristiti kroz cijelu aplikaciju. Lista proizvoda se nalazi na dnu dokumenta, potrebno je dodati sve propertije ove liste unutar interface klase. Te svugdje prilikom korištenja liste incijalizovati tu listu pomoću interface-a koji kreirate.</h2>
 
@@ -63,14 +63,14 @@ napravit folder models ili interfaces i u njemu napraviti interface i njemu nave
 su tipa podatci
 
             IInterfaceName.ts
-
+```typescript
 export Interface IInterfaceName {
     id: number,
     title: string,
     date: number,
     ...
 }
-
+```
 <h2>5. Na HomeComponent potrebno je uraditi sljedeće stavke:</h2>
 <ul>
     <li>Kreirati listu proizvoda</li>
@@ -79,14 +79,16 @@ export Interface IInterfaceName {
 
                 home.component.html
 
+```html
 <div>
     <article *ngFor="let elem of productList">{{elem.name}}</article>
 </div>
-
+```
 //Ili se moze stavit u novi paragraf {{elem.name}}
 
                 home.component.ts
 
+```typescript
 lista: IImeInterface[] = [
     {
         "id": 1,
@@ -107,6 +109,7 @@ lista: IImeInterface[] = [
         "type": "Clothing"
     }
 ]
+```
 
 <h2>6. Potrebno je postaviti da se HomeComponent učitava defaultno prilikom pokretanja projekta.</h2>
 
