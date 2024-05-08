@@ -1,29 +1,29 @@
 <h2>1. Kreirati novi Angular projekat na Desktop, ime projekta postaviti kao vaše ImePrezime.</h2>
 
-<p color="lightgreen">ng new ImePrezime</p>
+<p style="color:lightgreen;">ng new ImePrezime</p>
 
 <h2>2. Generisati sljedeće komponente: HomeComponent, NavComponent, ProductComponent i NotFoundComponent</h2>
 
 Za page komponente stranice
-<p color="lightgreen">ng g c pages/imeKomponente</p>
+<p style="color:lightgreen;">ng g c pages/imeKomponente</p>
 
 Za radece komponente stranice
-<p color="lightgreen">ng g c components/nav</p>
+<p style="color:lightgreen;">ng g c components/nav</p>
 
 
 <h2>3. NavComponent dodati na AppComponent, kako bi ova komponenta mogla biti stalno vidljiva. Na NavComponent potrebno je dodati navigacijsku traku. Na navigacijskoj traci potrebno da se nalaze sljedeća dva linka: Home i Product. Te nakon kreiranja navigacijske trake potrebno je rutirati dodane stavke na način da se otvaraju HomeComponent ili ProductComponent.</h2>
 
             app.component.html
 
-`<app-nav></app-nav>   <--
+```<app-nav></app-nav>   <--
 <main class="container">
   <router-outlet></router-outlet>
-</main>`
+</main>```
 
 
             nav.component.html
 
-`<nav>
+```<nav>
     <ul>
         <li><strong>KCKF</strong></li>
     </ul>
@@ -31,7 +31,7 @@ Za radece komponente stranice
         <li><a [routerLink]="'home'">Home</a></li>
         <li><a [routerLink]="'product'">Product</a></li>
     </ul>
-</nav>`
+</nav>```
 
 
             app-routing.module.ts
@@ -64,12 +64,12 @@ su tipa podatci
 
             IInterfaceName.ts
 
-export Interface IInterfaceName {
+```export Interface IInterfaceName {
     id: number,
     title: string,
     date: number,
     ...
-}
+}```
 
 <h2>5. Na HomeComponent potrebno je uraditi sljedeće stavke:</h2>
 <ul>
@@ -79,9 +79,9 @@ export Interface IInterfaceName {
 
                 home.component.html
 
-`<div>
+```<div>
     <article *ngFor="let elem of productList">{{elem.name}}</article>
-</div>`
+</div>```
 
 //Ili se moze stavit u novi paragraf {{elem.name}}
 
@@ -132,7 +132,7 @@ const routes: Routes = [
 1. Lista se ubaci u Product.component.ts
 
 2. //
-'<table>
+```<table>
     <thead>
       <tr>
         <th>Naziv</th>
@@ -151,34 +151,34 @@ const routes: Routes = [
         <td>{{product.type}}</td>
       </tr>
     </tbody>
-</table>'
+</table>```
 
 3. //potrebno je ubaciti pipe curency
 
-<td>{{product.price | currency:"EUR"}}</td>
+```<td>{{product.price | currency:"EUR"}}</td>```
 
 
 4. //nadodati if u style.color
 
-'<td [style.color]="product.price < 100 ? 'red' : 'green'"
->{{product.price | currency:"EUR"}}</td>'
+```<td [style.color]="product.price < 100 ? 'red' : 'green'"
+>{{product.price | currency:"EUR"}}</td>```
 
 
 5. //
 
-'<td>{{product.status ? "Aktivan" : "Neaktivan" }}</td>'
+```<td>{{product.status ? "Aktivan" : "Neaktivan" }}</td>```
 
 
 6. //
 
-'<button (click)="product.status = !product.status">{{product.status ? 'Aktivan':'Neaktivan'}}</button>'
+```<button (click)="product.status = !product.status">{{product.status ? 'Aktivan':'Neaktivan'}}</button>```
 
 
 <h2>8. Na ProductComponent iznad tabele proizvoda dodati button koji će imati mogućnost da sakrije ili prikaže cijelu tabelu. To znači da ukoliko je tabela prikazana, potrebno je da button ima naziv Sakrij tabelu i klikom na button da se tabela sakrije i obratno.</h2>
 
                 product.component.html
 
-'<button (click)="showTable = !showTable">{{showTable ? "Hide Table": "Show Table"}}</button>'
+```<button (click)="showTable = !showTable">{{showTable ? "Hide Table": "Show Table"}}</button>```
 
                 product.component.ts
 
