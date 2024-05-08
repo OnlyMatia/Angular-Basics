@@ -1,14 +1,14 @@
 <h2>1. Kreirati novi Angular projekat na Desktop, ime projekta postaviti kao vaše ImePrezime.</h2>
 
-<font color="lightgreen">ng new ImePrezime</font>
+<p style="color:green;">ng new ImePrezime</p>
 
 <h2>2. Generisati sljedeće komponente: HomeComponent, NavComponent, ProductComponent i NotFoundComponent</h2>
 
 Za page komponente stranice
-<p style="color:lightgreen;">ng g c pages/imeKomponente</p>
+<p style="color:green;">ng g c pages/imeKomponente</p>
 
 Za radece komponente stranice
-<p style="color:lightgreen;">ng g c components/nav</p>
+<p style="color:green;">ng g c components/nav</p>
 
 
 <h2>3. NavComponent dodati na AppComponent, kako bi ova komponenta mogla biti stalno vidljiva. Na NavComponent potrebno je dodati navigacijsku traku. Na navigacijskoj traci potrebno da se nalaze sljedeća dva linka: Home i Product. Te nakon kreiranja navigacijske trake potrebno je rutirati dodane stavke na način da se otvaraju HomeComponent ili ProductComponent.</h2>
@@ -114,14 +114,14 @@ lista: IImeInterface[] = [
 <h2>6. Potrebno je postaviti da se HomeComponent učitava defaultno prilikom pokretanja projekta.</h2>
 
                 app-routing.module.ts
-
+```typescript
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   }
-
+```
 <h2>7. Na ProductComponent je potrebno uraditi sljedeće stavke:</h2>
 <ol>
 <li>Kreirati listu proizvoda</li>
@@ -189,7 +189,7 @@ const routes: Routes = [
 
                 product.component.ts
 
-showTable = true;
+```showTable = true;```
 
 
 
