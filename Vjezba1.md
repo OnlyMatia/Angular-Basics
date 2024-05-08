@@ -15,15 +15,15 @@ Za radece komponente stranice
 
             app.component.html
 
-```<app-nav></app-nav>   <--
+<app-nav></app-nav>   <--
 <main class="container">
   <router-outlet></router-outlet>
-</main>```
+</main>
 
 
             nav.component.html
 
-```<nav>
+<nav>
     <ul>
         <li><strong>KCKF</strong></li>
     </ul>
@@ -31,7 +31,7 @@ Za radece komponente stranice
         <li><a [routerLink]="'home'">Home</a></li>
         <li><a [routerLink]="'product'">Product</a></li>
     </ul>
-</nav>```
+</nav>
 
 
             app-routing.module.ts
@@ -64,12 +64,12 @@ su tipa podatci
 
             IInterfaceName.ts
 
-```export Interface IInterfaceName {
+export Interface IInterfaceName {
     id: number,
     title: string,
     date: number,
     ...
-}```
+}
 
 <h2>5. Na HomeComponent potrebno je uraditi sljedeće stavke:</h2>
 <ul>
@@ -79,9 +79,9 @@ su tipa podatci
 
                 home.component.html
 
-```<div>
+<div>
     <article *ngFor="let elem of productList">{{elem.name}}</article>
-</div>```
+</div>
 
 //Ili se moze stavit u novi paragraf {{elem.name}}
 
@@ -132,26 +132,30 @@ const routes: Routes = [
 1. Lista se ubaci u Product.component.ts
 
 2. //
-```<table>
-    <thead>
-      <tr>
-        <th>Naziv</th>
-        <th>Kolicina</th>
-        <th>Cijena</th>
-        <th>Status</th>
-        <th>Kategorija</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of productList">
-        <th>{{product.name}}</th>
-        <td>{{product.quantity}}</td>
-        <td>{{product.price}}</td>
-        <td>{{product.status}}</td>
-        <td>{{product.type}}</td>
-      </tr>
-    </tbody>
-</table>```
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Naziv</th>
+      <th>Količina</th>
+      <th>Cijena</th>
+      <th>Status</th>
+      <th>Kategorija</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList">
+      <th>{{product.name}}</th>
+      <td>{{product.quantity}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.status}}</td>
+      <td>{{product.type}}</td>
+    </tr>
+  </tbody>
+</table>
+```
+
 
 3. //potrebno je ubaciti pipe curency
 
@@ -160,8 +164,8 @@ const routes: Routes = [
 
 4. //nadodati if u style.color
 
-```<td [style.color]="product.price < 100 ? 'red' : 'green'"
->{{product.price | currency:"EUR"}}</td>```
+```<td [style.color]="product.price < 100 ? 'red' : 'green'"```
+```>{{product.price | currency:"EUR"}}</td>```
 
 
 5. //
